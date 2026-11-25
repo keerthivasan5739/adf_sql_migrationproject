@@ -1,0 +1,147 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfdevsqlmigration1"
+		},
+		"LS_LOOKUP_MAX_VALUE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_LOOKUP_MAX_VALUE'"
+		},
+		"LS_ONPERM_SQL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_ONPERM_SQL'"
+		},
+		"LS_SQLSERVER_TABLE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQLSERVER_TABLE'"
+		},
+		"LS_SQLTABLE_PARAQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SQLTABLE_PARAQUET'"
+		},
+		"LS_LOOKUP_MAX_VALUE_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-H9F21ET\\SQLEXPRESS"
+		},
+		"LS_LOOKUP_MAX_VALUE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqlmigration"
+		},
+		"LS_LOOKUP_MAX_VALUE_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_ONPERM_SQL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-H9F21ET\\SQLEXPRESS"
+		},
+		"LS_ONPERM_SQL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqlmigration"
+		},
+		"LS_ONPERM_SQL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_SQLSERVER_TABLE_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-H9F21ET\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_TABLE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqlmigration"
+		},
+		"LS_SQLSERVER_TABLE_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_SQLTABLE_PARAQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevmigration01.dfs.core.windows.net/"
+		},
+		"integrationRuntimeSqlmigration_properties_typeProperties_linkedInfo_resourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f0af518b-ee81-4509-8073-4cee4da3b9ca/resourcegroups/rg_dev_cheronproject/providers/Microsoft.DataFactory/factories/adfdevelopcheronproject001/integrationruntimes/integrationRuntime"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adfdevsqlmigration1_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_SQLTABLE_PARAQUET_accountKey": {
+						"value": "[parameters('LS_SQLTABLE_PARAQUET_accountKey')]"
+					},
+					"LS_LOOKUP_MAX_VALUE_password": {
+						"value": "[parameters('LS_LOOKUP_MAX_VALUE_password')]"
+					},
+					"LS_ONPERM_SQL_password": {
+						"value": "[parameters('LS_ONPERM_SQL_password')]"
+					},
+					"LS_SQLSERVER_TABLE_password": {
+						"value": "[parameters('LS_SQLSERVER_TABLE_password')]"
+					},
+					"LS_SQLTABLE_PARAQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_SQLTABLE_PARAQUET_properties_typeProperties_url')]"
+					},
+					"integrationRuntimeSqlmigration_properties_typeProperties_linkedInfo_resourceId": {
+						"value": "[parameters('integrationRuntimeSqlmigration_properties_typeProperties_linkedInfo_resourceId')]"
+					},
+					"LS_LOOKUP_MAX_VALUE_properties_typeProperties_server": {
+						"value": "[parameters('LS_LOOKUP_MAX_VALUE_properties_typeProperties_server')]"
+					},
+					"LS_LOOKUP_MAX_VALUE_properties_typeProperties_database": {
+						"value": "[parameters('LS_LOOKUP_MAX_VALUE_properties_typeProperties_database')]"
+					},
+					"LS_LOOKUP_MAX_VALUE_properties_typeProperties_userName": {
+						"value": "[parameters('LS_LOOKUP_MAX_VALUE_properties_typeProperties_userName')]"
+					},
+					"LS_ONPERM_SQL_properties_typeProperties_server": {
+						"value": "[parameters('LS_ONPERM_SQL_properties_typeProperties_server')]"
+					},
+					"LS_ONPERM_SQL_properties_typeProperties_database": {
+						"value": "[parameters('LS_ONPERM_SQL_properties_typeProperties_database')]"
+					},
+					"LS_ONPERM_SQL_properties_typeProperties_userName": {
+						"value": "[parameters('LS_ONPERM_SQL_properties_typeProperties_userName')]"
+					},
+					"LS_SQLSERVER_TABLE_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQLSERVER_TABLE_properties_typeProperties_server')]"
+					},
+					"LS_SQLSERVER_TABLE_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQLSERVER_TABLE_properties_typeProperties_database')]"
+					},
+					"LS_SQLSERVER_TABLE_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQLSERVER_TABLE_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

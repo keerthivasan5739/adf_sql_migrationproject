@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfdevsqlmigration1"
+		},
+		"LS_LOOKUP_MAX_VALUE_password": {
+			"value": ""
+		},
+		"LS_ONPERM_SQL_password": {
+			"value": ""
+		},
+		"LS_SQLSERVER_TABLE_password": {
+			"value": ""
+		},
+		"LS_SQLTABLE_PARAQUET_accountKey": {
+			"value": ""
+		},
+		"LS_LOOKUP_MAX_VALUE_properties_typeProperties_server": {
+			"value": "DESKTOP-H9F21ET\\SQLEXPRESS"
+		},
+		"LS_LOOKUP_MAX_VALUE_properties_typeProperties_database": {
+			"value": "sqlmigration"
+		},
+		"LS_LOOKUP_MAX_VALUE_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_ONPERM_SQL_properties_typeProperties_server": {
+			"value": "DESKTOP-H9F21ET\\SQLEXPRESS"
+		},
+		"LS_ONPERM_SQL_properties_typeProperties_database": {
+			"value": "sqlmigration"
+		},
+		"LS_ONPERM_SQL_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_SQLSERVER_TABLE_properties_typeProperties_server": {
+			"value": "DESKTOP-H9F21ET\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_TABLE_properties_typeProperties_database": {
+			"value": "sqlmigration"
+		},
+		"LS_SQLSERVER_TABLE_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_SQLTABLE_PARAQUET_properties_typeProperties_url": {
+			"value": "https://adlsdevmigration01.dfs.core.windows.net/"
+		},
+		"integrationRuntimeSqlmigration_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/f0af518b-ee81-4509-8073-4cee4da3b9ca/resourcegroups/rg_dev_cheronproject/providers/Microsoft.DataFactory/factories/adfdevelopcheronproject001/integrationruntimes/integrationRuntime"
+		}
+	}
+}
