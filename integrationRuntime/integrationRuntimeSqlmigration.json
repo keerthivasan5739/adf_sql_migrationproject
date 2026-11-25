@@ -1,0 +1,12 @@
+{
+	"name": "integrationRuntimeSqlmigration",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/f0af518b-ee81-4509-8073-4cee4da3b9ca/resourcegroups/rg_dev_cheronproject/providers/Microsoft.DataFactory/factories/adfdevelopcheronproject001/integrationruntimes/integrationRuntime",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}
